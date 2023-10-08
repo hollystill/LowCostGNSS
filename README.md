@@ -23,9 +23,9 @@ High equipment costs can be prohibitive to scientific discovery, limiting the co
 ## Hardware components
 
 
-| Component               | Description        | Serial number     | Cost (EUR)  |
-|-------------------------|--------------------|-------------------|-------------|
-| U-blox ZED-F9P receiver | GNSS receiver      |  x                |             |
+| Component                                                                                | Description        | Serial number     | Cost (EUR)  |
+|------------------------------------------------------------------------------------------|--------------------|-------------------|-------------|
+| [U-blox ZED-F9P receiver](/Documentation/Manuals/ZED-F9P-04B_DataSheet_UBX-21044850.pdf) | GNSS receiver      |  x                |             |
 
 
 
