@@ -24,15 +24,8 @@ High equipment costs can be prohibitive to scientific discovery, limiting the co
 
 | Component               | Description        | Serial number     | Cost        |
 |-------------------------|------------------------------------------------------|
-| U-blox ZED-F9P receiver |
-|
-|
-|
-|
-|
-|
-|
-|
+| U-blox ZED-F9P receiver | |||
+
 
 
 
