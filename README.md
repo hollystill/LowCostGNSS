@@ -27,7 +27,9 @@ A detailed list of components is provided [here](\Hardware).
 
 ## Set-up
 
-1. Configure the u-blox receiver with a CONFIG.txt file. This file
+1. Configure the u-blox receiver with a CONFIG.txt file. We use the freely-available software [u-center](https://www.u-blox.com/en/product/u-center) to generate the CONFIG.txt file and write the configuration to the receiver. A CONFIG.txt file looks like this:
+
+In this case, we enable the u-blox receiver to log GPS, GLONASS, Galileo, Beidou, QZSS and SBAS constellations. 
 
 ## Resources
 
