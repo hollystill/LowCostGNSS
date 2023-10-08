@@ -22,7 +22,21 @@ High equipment costs can be prohibitive to scientific discovery, limiting the co
 
 ## Hardware components
 
-A detailed list of components is provided [here](\Hardware). 
+| Component               | Description        | Serial number     | Cost        |
+|-------------------------|------------------------------------------------------|
+| U-blox ZED-F9P receiver |
+|
+|
+|
+|
+|
+|
+|
+|
+
+
+
+A detailed list of components is provided [here](/Hardware). 
 
 
 ## Set-up
