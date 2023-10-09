@@ -16,7 +16,7 @@ This repository describes the build and configuration of the low-cost GNSS posit
 </figure>
 
 ## Contents
-[Motivation](#motivation)|[Overview](#overview)|[Hardware](#hardware)
+[Motivation](#motivation) | [Overview](#overview) | [Hardware](#hardware) | [How does it work?](#setup) | [Power consumption](#power) |  [Resources](#resources) |  [License](#license) | [Contributors](#contributors) | 
 
 <a name="motivation"></a>
 ## Motivation
@@ -46,7 +46,7 @@ We also evaluate the performance of two low-cost multiband antenna models:  the 
 
 A detailed list of components is provided [here](/Hardware). 
 
-
+<a name="setup"></a>
 ## How does it work?
 
 1. Configure the u-blox receiver with a CONFIG.txt file. We use the freely-available software [u-center](https://www.u-blox.com/en/product/u-center) to generate the CONFIG.txt file and write the configuration to the receiver. A CONFIG.txt file looks like this:
@@ -56,14 +56,18 @@ In this case, we enable the u-blox receiver to log GPS, GLONASS, Galileo, Beidou
 
 1. The first processing step involves a conversion from the proprietary u-blox and Trimble raw data file formats to standard RINEX 3.03 (Receiver Independent Exchange) files. U-blox data streams are converted using open-source RTKLIB tools \citep{Takasu2009}. 
 
-
+<a name="power"></a>
 ## Power consumption
 
 The low-cost GNSS units are powered by two 10 W, 12 V solar panels and a 12 V, 18 A h SLA battery. The rate of power consumption is relatively low (0.57 W for the u-blox ZED-F9P module + patch antenna + Arduino Cortex M0 logger, versus 1.25 W for a Trimble R10 system, and 3.67~W for a Trimble NetR9 system).
 
+<a name="resources"></a>
 ## Resources
 
+<a name="license"></a>
+## License
 
+<a name="contributor"></a>
 ## Contributor information
 
 
