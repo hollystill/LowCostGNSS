@@ -37,10 +37,13 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 ## Hardware components
 
 
-| Component                                                                                | Description        | Serial number     | Cost (EUR)  |
-|------------------------------------------------------------------------------------------|--------------------|-------------------|-------------|
-| [U-blox ZED-F9P receiver](/Documentation/Manuals/ZED-F9P-04B_DataSheet_UBX-21044850.pdf) | GNSS receiver      |  x                |             |
-
+| Component                                                                                      | Description              | Serial number     | Cost (EUR)  |
+|------------------------------------------------------------------------------------------------|--------------------------|-------------------|-------------|
+| [U-blox ZED-F9P receiver board](/Documentation/Manuals/ZED-F9P-04B_DataSheet_UBX-21044850.pdf) | GNSS receiver            |  x                | 209.99      |
+| [U-blox ANN-MB patch antenna](https://www.u-blox.com/en/product/ann-mb-series)                 | Multi-band GNSS antenna  |  x                | 60 USD      |
+| [Eltehs surveying antenna](https://gnss.store/gnss-rtk-multiband-antennas/140-elt0123.html)    | Alternative GNSS antenna |  x                | 180.99      |
+| [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796)                         | Data logger              |  x                | 19.95 USD   |
+| [FeatherWing Proto Board](https://www.adafruit.com/product/2884)                               | x                        |  x                | 4.95 USD    |
 
 We also evaluate the performance of two low-cost multiband antenna models:  the u-blox ANN-MB patch antenna \citep{ublox2022a} and an Eltehs multiband (ELT0123) standard surveying antenna \citep{Eltehs2023} (Table \ref{tbl:hardware}). 
 
@@ -64,12 +67,19 @@ The low-cost GNSS units are powered by two 10 W, 12 V solar panels and a 12 V, 1
 <a name="resources"></a>
 ## Resources
 
+Links go here:
+
 <a name="license"></a>
 ## License
+
+Licence info here:
 
 <a name="contributor"></a>
 ## Contributor information
 
+Holly...
+
+Hamish...
 
 ## Citation
 
