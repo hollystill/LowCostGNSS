@@ -17,7 +17,9 @@ High equipment costs can be prohibitive to scientific discovery, limiting the co
 
 ## Overview of the low-cost GNSS system
 
+- Each low-cost GNSS installation includes a receiver, antenna, data logger and power source (12 V battery and solar panel) (Table \ref{tbl:hardware}). The u-blox ZED-F9P GNSS receiver module is capable of tracking GPS (L1/L2), GLONASS (L1/L2), Galileo (E1/E5b), Beidou (B1/B2), and QZSS (L1/L2) systems and frequencies \citep{ublox2022c}. 
 
+- The receiver is configured to log all available satellites and frequencies at 1 Hz using the software U-center v22.07 \citep{ublox2022b}.  RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) are enabled and the raw binary u-blox files are stored with an Arduino data logger to micro SD card. 
 
 
 ## Hardware components
@@ -28,7 +30,7 @@ High equipment costs can be prohibitive to scientific discovery, limiting the co
 | [U-blox ZED-F9P receiver](/Documentation/Manuals/ZED-F9P-04B_DataSheet_UBX-21044850.pdf) | GNSS receiver      |  x                |             |
 
 
-
+We also evaluate the performance of two low-cost multiband antenna models:  the u-blox ANN-MB patch antenna \citep{ublox2022a} and an Eltehs multiband (ELT0123) standard surveying antenna \citep{Eltehs2023} (Table \ref{tbl:hardware}). 
 
 A detailed list of components is provided [here](/Hardware). 
 
@@ -38,6 +40,10 @@ A detailed list of components is provided [here](/Hardware).
 1. Configure the u-blox receiver with a CONFIG.txt file. We use the freely-available software [u-center](https://www.u-blox.com/en/product/u-center) to generate the CONFIG.txt file and write the configuration to the receiver. A CONFIG.txt file looks like this:
 
 In this case, we enable the u-blox receiver to log GPS, GLONASS, Galileo, Beidou, QZSS and SBAS constellations. 
+
+## Power consumption
+
+The low-cost GNSS units are powered by two 10 W, 12 V solar panels and a 12 V, 18 A h SLA battery. The rate of power consumption is relatively low (0.57 W for the u-blox ZED-F9P module + patch antenna + Arduino Cortex M0 logger, versus 1.25 W for a Trimble R10 system, and 3.67~W for a Trimble NetR9 system).
 
 ## Resources
 
