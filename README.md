@@ -37,6 +37,13 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 ## Hardware components
 
 
+<figure>
+<img src="/Documentation/Images/ublox_receiver.jpeg" style="width:50%">
+<figcaption>
+ <strong>Figure 2.</strong> U-blox ZED-F9P receiver board.
+</figcaption>
+</figure>
+
 | Component                                                                                      | Description              | Serial number     | Cost (EUR)  |
 |------------------------------------------------------------------------------------------------|--------------------------|-------------------|-------------|
 | [U-blox ZED-F9P receiver board](/Documentation/Manuals/ZED-F9P-04B_DataSheet_UBX-21044850.pdf) | GNSS receiver            |  x                | 209.99      |
