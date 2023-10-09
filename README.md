@@ -11,9 +11,10 @@ This repository describes the build and configuration of the low-cost GNSS posit
 
 ## Motivation
 
-GNSS (global navigation satellite system) positioning is ubiquitous in the cryospheric sciences, with uses ranging from routine field site navigation tasks to precise monitoring and measurement of deformation. While applications have proliferated, the cost of access to the state of the art has remained high with “survey” or “geodetic” grade receivers priced at 10s of thousands USD. Low-cost, mass-market, open-source GNSS chip devices - a relatively new and rapidly developing technology - are an alternative to the proprietary systems typically used in glacier and other cryosphere studies. Coupled with a low-cost patch antenna, these systems are light and compact, with relatively low power consumption and a cost of entry around 500 USD.  
+GNSS (global navigation satellite system) positioning is ubiquitous in the cryospheric sciences, with uses ranging from routine field site navigation tasks to precise monitoring and measurement of deformation. Glaciological applications typically use geodetic or ‘survey-grade’ GNSS receivers that retail for >$20,000 NZD per unit. High equipment costs can be prohibitive to scientific discovery, limiting the concurrent deployment of multiple GNSS receivers over large areas of interest and restricting access to users with well-financed research programs.
 
-High equipment costs can be prohibitive to scientific discovery, limiting the concurrent deployment of multiple GNSS receivers over large areas of interest and restricting access to users with well-financed research programs. Our work shows that alternatives are readily available and we encourage everybody to adopt them.   
+
+ Low-cost, mass-market, open-source GNSS chip devices - a relatively new and rapidly developing technology - are an alternative to the proprietary systems typically used in glacier and other cryosphere studies. Coupled with a low-cost patch antenna, these systems are light and compact, with relatively low power consumption and a cost of entry around 500 USD.  Here we demonstrate the set-up of a low-cost, u-blox GNSS units for use in glaciated environments. Our work shows that alternatives to expensive survey-grade systems are readily available and we encourage everybody to adopt them.   
 
 ## Overview of the low-cost GNSS system
 
