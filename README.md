@@ -11,15 +11,17 @@ This repository describes the build and configuration of the low-cost GNSS posit
 <figure>
 <img src="/Documentation/Images/DSC_0474_crop.jpeg">
 <figcaption>
-"GNSS positioning test conducted on Priestley Glacier in Victoria Land, Antarctica, November 2022."
+**Figure 1.** GNSS positioning tests conducted on Priestley Glacier in Victoria Land, Antarctica, November 2022.
 </figcaption>
 </figure>
 
-## Table of contents
+## Contents
+[Motivation](#motivation)
 
+<a name="motivation"></a>
 ## Motivation
 
-GNSS (global navigation satellite system) positioning is ubiquitous in the cryospheric sciences, with uses ranging from routine field site navigation tasks to precise monitoring and measurement of deformation. Glaciological applications typically use geodetic or ‘survey-grade’ GNSS receivers that retail for >$20,000 NZD per unit. High equipment costs can be prohibitive to scientific discovery, limiting the concurrent deployment of multiple GNSS receivers over large areas of interest and restricting access to users with well-financed research programs.
+Global navigation satellite system (GNSS) positioning is ubiquitous in the cryospheric sciences, with uses ranging from routine field site navigation tasks to precise monitoring and measurement of deformation. Glaciological applications typically use geodetic or ‘survey-grade’ GNSS receivers that retail for >$20,000 NZD per unit. High equipment costs can be prohibitive to scientific discovery, limiting the concurrent deployment of multiple GNSS receivers over large areas of interest and restricting access to users with well-financed research programs.
 
 
  Low-cost, mass-market, open-source GNSS chip devices - a relatively new and rapidly developing technology - are an alternative to the proprietary systems typically used in glacier and other cryosphere studies. Coupled with a low-cost patch antenna, these systems are light and compact, with relatively low power consumption and a cost of entry around 500 USD.  Here we demonstrate the set-up of a low-cost, u-blox GNSS units for use in glaciated environments. Our work shows that alternatives to expensive survey-grade systems are readily available and we encourage everybody to adopt them.   
@@ -51,7 +53,7 @@ A detailed list of components is provided [here](/Hardware).
 In this case, we enable the u-blox receiver to log GPS, GLONASS, Galileo, Beidou, QZSS and SBAS constellations. 
 
 
-2. The first processing step involves a conversion from the proprietary u-blox and Trimble raw data file formats to standard RINEX 3.03 (Receiver Independent Exchange) files. U-blox data streams are converted using open-source RTKLIB tools \citep{Takasu2009}. 
+1. The first processing step involves a conversion from the proprietary u-blox and Trimble raw data file formats to standard RINEX 3.03 (Receiver Independent Exchange) files. U-blox data streams are converted using open-source RTKLIB tools \citep{Takasu2009}. 
 
 
 ## Power consumption
@@ -61,7 +63,7 @@ The low-cost GNSS units are powered by two 10 W, 12 V solar panels and a 12 V, 1
 ## Resources
 
 
-## Contributors
+## Contributor information
 
 
 ## Citation
