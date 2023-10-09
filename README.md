@@ -34,15 +34,20 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 - The receiver is configured to log all available satellites and frequencies at 1 Hz using the software U-center v22.07 \citep{ublox2022b}.  RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) are enabled and the raw binary u-blox files are stored with an Arduino data logger to micro SD card. 
 
 <a name="hardware"></a>
-## Hardware components
+## Hardware 
 
 
 <figure>
+<p align="center">
 <img src="/Documentation/Images/ublox_receiver.jpg" style="width:50%">
+</p>
 <figcaption>
  <strong>Figure 2.</strong> U-blox ZED-F9P receiver board.
 </figcaption>
 </figure>
+
+
+### Table 1. Components to build a low-cost GNSS unit.
 
 | Component                                                                                      | Description              | Serial number     | Cost (EUR)  |
 |------------------------------------------------------------------------------------------------|--------------------------|-------------------|-------------|
