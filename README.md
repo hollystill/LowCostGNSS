@@ -7,6 +7,9 @@ This repository describes the build and configuration of the low-cost GNSS posit
 
 <figure>
 ![Priestley Glacier, Victoria Land, Antarctica](/Documentation/Images/DSC_0474_crop.jpeg)
+<figcaption>
+"GNSS positioning test conducted on Priestley Glacier in Victoria Land, Antarctica, November 2022."
+</figcaption>
 </figure>
 
 ## Table of contents
