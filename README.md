@@ -5,8 +5,11 @@ This repository describes the build and configuration of the low-cost GNSS posit
 [Still, H., Odolinski, R., Bowman, H., Hulbe, C. and Prior, D. (Under review) Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica. Submitted to the _Journal of Glaciology_](https://drive.google.com/file/d/1XmEQSZw7YCs4UeDsx9XjOYceR0UcZ_Ou/view?usp=drive_link)
 
 
+<!---![Priestley Glacier, Victoria Land, Antarctica](/Documentation/Images/DSC_0474_crop.jpeg)--->
+
+
 <figure>
-![Priestley Glacier, Victoria Land, Antarctica](/Documentation/Images/DSC_0474_crop.jpeg)
+<img src="/Documentation/Images/DSC_0474_crop.jpeg">
 <figcaption>
 "GNSS positioning test conducted on Priestley Glacier in Victoria Land, Antarctica, November 2022."
 </figcaption>
