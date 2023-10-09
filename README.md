@@ -16,7 +16,7 @@ This repository describes the build and configuration of the low-cost GNSS posit
 </figure>
 
 ## Contents
-[Motivation](#motivation)
+[Motivation](#motivation)|[Overview](#overview)|[Hardware](#hardware)
 
 <a name="motivation"></a>
 ## Motivation
@@ -26,13 +26,14 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
  Low-cost, mass-market, open-source GNSS chip devices - a relatively new and rapidly developing technology - are an alternative to the proprietary systems typically used in glacier and other cryosphere studies. Coupled with a low-cost patch antenna, these systems are light and compact, with relatively low power consumption and a cost of entry around 500 USD.  Here we demonstrate the set-up of a low-cost, u-blox GNSS units for use in glaciated environments. Our work shows that alternatives to expensive survey-grade systems are readily available and we encourage everybody to adopt them.   
 
+<a name="overview"></a>
 ## Overview of the low-cost GNSS system
 
 - Each low-cost GNSS installation includes a receiver, antenna, data logger and power source (12 V battery and solar panel) (Table \ref{tbl:hardware}). The u-blox ZED-F9P GNSS receiver module is capable of tracking GPS (L1/L2), GLONASS (L1/L2), Galileo (E1/E5b), Beidou (B1/B2), and QZSS (L1/L2) systems and frequencies \citep{ublox2022c}. 
 
 - The receiver is configured to log all available satellites and frequencies at 1 Hz using the software U-center v22.07 \citep{ublox2022b}.  RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) are enabled and the raw binary u-blox files are stored with an Arduino data logger to micro SD card. 
 
-
+<a name="hardware"></a>
 ## Hardware components
 
 
