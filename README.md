@@ -38,7 +38,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
 
 <figure>
-<img src="/Documentation/Images/ublox_receiver.jpeg" style="width:50%">
+<img src="/Documentation/Images/ublox_receiver.jpg" style="width:50%">
 <figcaption>
  <strong>Figure 2.</strong> U-blox ZED-F9P receiver board.
 </figcaption>
