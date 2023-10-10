@@ -16,7 +16,7 @@ This repository describes the build and configuration of the low-cost GNSS posit
 </figure>
 
 ## Contents
-[Motivation](#motivation) | [Overview](#overview) | [Hardware](#hardware) | [How does it work?](#setup) | [Power consumption](#power) |  [Resources](#resources) |  [License](#license) | [Contributors](#contributors) | 
+[Motivation](#motivation) | [Overview](#overview) | [Hardware](#hardware) | [How does it work?](#setup) | [Power consumption](#power) |  [Resources](#resources) |  [License](#license) | [Contributors](#contributors)  
 
 <a name="motivation"></a>
 ## Motivation
@@ -25,6 +25,16 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
 
  Low-cost, mass-market, open-source GNSS chip devices - a relatively new and rapidly developing technology - are an alternative to the proprietary systems typically used in glacier and other cryosphere studies. Coupled with a low-cost patch antenna, these systems are light and compact, with relatively low power consumption and a cost of entry around $500 NZD.  Here we demonstrate the set-up of a low-cost, u-blox GNSS unit for use in high-latitude glaciated environments. Our work shows that alternatives to expensive survey-grade systems are readily available and we encourage everybody to adopt them.   
+
+ <figure>
+<p align="center">
+<img src="/Documentation/Images/cost_overview.png" style="width:20%">
+</p>
+<!---<figcaption>
+ <strong>Figure 2.</strong> U-blox ZED-F9P receiver board.
+</figcaption>--->
+</figure>
+
 
 <a name="overview"></a>
 ## Summary of the low-cost GNSS system
@@ -39,8 +49,16 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
 - The low-cost u-blox receiver + patch antenna system consumes <50% less power than survey-grade alternatives (e.g., Trimble NetR9 and R10 systems).
 
-- **Our experiments show that the precision of the low-cost system is comparable to survey grade alternatives [Still et al., 2023](/Paper/LowCostGNSSpaper.pdf)**
+- **Our experiments show that the precision of the low-cost system is comparable to survey-grade alternatives [(Still et al., 2023)](/Paper/LowCostGNSSpaper.pdf)**
 
+<figure>
+<p align="center">
+<img src="/Documentation/Images/static_GNSS_experiment.png" style="width:20%">
+</p>
+<figcaption>
+<b>Figure 2.</b> A stationary comparison between low-cost (u-blox ZED-F9P) and survey-grade (Trimble R10) systems conducted in Terra Nova Bay, Antarctica.
+</figcaption>
+</figure>
 
 <a name="hardware"></a>
 ## Hardware 
@@ -98,7 +116,7 @@ Extra links go here:
 <a name="license"></a>
 ## License
 
-Licence info here:
+This project is distributed under a ....
 
 <a name="contributor"></a>
 ## Contributor information
@@ -113,10 +131,18 @@ The _Journal of Glaciology_ paper can be acknowledged with the following citatio
 
 - [Still, H., Odolinski, R., Bowman, H., Hulbe, C. and Prior, D. (Under review) Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica. Submitted to the _Journal of Glaciology_](https://drive.google.com/file/d/1XmEQSZw7YCs4UeDsx9XjOYceR0UcZ_Ou/view?usp=drive_link)
 
+```
 @article{still2023gnss,
   title={Observing glacier dynamics with low-cot, multi-GNSS in Victoria Land, Antarctica},
   author={Still, Holly and Odolinski, Robert and Bowman, M Hamish and Hulbe, Christina and Prior, David J  },
   journal={under review for Journal of Glaciology},
   year={2023},
 }
+```
 
+<figure>
+<img src="/Documentation/Images/DSC_0319.jpg">
+<figcaption>
+<b>Figure 4.</b> Priestley Glacier, November 2022.
+</figcaption>
+</figure>
