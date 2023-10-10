@@ -11,7 +11,7 @@ This repository describes the build and configuration of the low-cost GNSS posit
 <figure>
 <img src="/Documentation/Images/DSC_0474_crop.jpeg">
 <figcaption>
-**Figure 1.** GNSS positioning tests conducted on Priestley Glacier in Victoria Land, Antarctica, November 2022.
+<b>Figure 1.</b> GNSS positioning tests conducted on Priestley Glacier in Victoria Land, Antarctica, November 2022.
 </figcaption>
 </figure>
 
@@ -24,14 +24,23 @@ This repository describes the build and configuration of the low-cost GNSS posit
 Global navigation satellite system (GNSS) positioning is ubiquitous in the cryospheric sciences, with uses ranging from routine field site navigation tasks to precise monitoring and measurement of deformation. Glaciological applications typically use geodetic or ‘survey-grade’ GNSS receivers that retail for >$20,000 NZD per unit. High equipment costs can be prohibitive to scientific discovery, limiting the concurrent deployment of multiple GNSS receivers over large areas of interest and restricting access to users with well-financed research programs.
 
 
- Low-cost, mass-market, open-source GNSS chip devices - a relatively new and rapidly developing technology - are an alternative to the proprietary systems typically used in glacier and other cryosphere studies. Coupled with a low-cost patch antenna, these systems are light and compact, with relatively low power consumption and a cost of entry around 500 USD.  Here we demonstrate the set-up of a low-cost, u-blox GNSS units for use in glaciated environments. Our work shows that alternatives to expensive survey-grade systems are readily available and we encourage everybody to adopt them.   
+ Low-cost, mass-market, open-source GNSS chip devices - a relatively new and rapidly developing technology - are an alternative to the proprietary systems typically used in glacier and other cryosphere studies. Coupled with a low-cost patch antenna, these systems are light and compact, with relatively low power consumption and a cost of entry around $500 NZD.  Here we demonstrate the set-up of a low-cost, u-blox GNSS unit for use in high-latitude glaciated environments. Our work shows that alternatives to expensive survey-grade systems are readily available and we encourage everybody to adopt them.   
 
 <a name="overview"></a>
-## Overview of the low-cost GNSS system
+## Summary of the low-cost GNSS system
 
-- Each low-cost GNSS installation includes a receiver, antenna, data logger and power source (12 V battery and solar panel) (Table \ref{tbl:hardware}). The u-blox ZED-F9P GNSS receiver module is capable of tracking GPS (L1/L2), GLONASS (L1/L2), Galileo (E1/E5b), Beidou (B1/B2), and QZSS (L1/L2) systems and frequencies \citep{ublox2022c}. 
+- Each low-cost, low-power GNSS installation includes a receiver, antenna, data logger and power source (12 V battery and solar panel). 
 
-- The receiver is configured to log all available satellites and frequencies at 1 Hz using the software U-center v22.07 \citep{ublox2022b}.  RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) are enabled and the raw binary u-blox files are stored with an Arduino data logger to micro SD card. 
+- Key components include a [u-blox ZED-F9P GNSS receiver module](https://www.u-blox.com/en/product/zed-f9p-module) and [u-blox patch antenna](https://www.u-blox.com/en/product/ann-mb-series).     
+
+- The [u-blox ZED-F9P GNSS receiver module](https://www.u-blox.com/en/product/zed-f9p-module) is capable of tracking GPS (L1/L2), GLONASS (L1/L2), Galileo (E1/E5b), Beidou (B1/B2), and QZSS (L1/L2) systems and frequencies. 
+
+- The receiver is configured to log multi-GNSS, dual frequency observations at 1 Hz.  RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) are enabled and the raw binary u-blox files are stored with an Arduino data logger to micro SD card.
+
+- The low-cost u-blox receiver + patch antenna system consumes <50% less power than survey-grade alternatives (e.g., Trimble NetR9 and R10 systems).
+
+- **Our experiments show that the precision of the low-cost system is comparable to survey grade alternatives [Still et al., 2023](/Paper/LowCostGNSSpaper.pdf)**
+
 
 <a name="hardware"></a>
 ## Hardware 
@@ -69,6 +78,8 @@ A detailed list of components is provided [here](/Hardware).
 1. In this case, we enable the u-blox receiver to log GPS L1/L2, GLONASS, Galileo, Beidou, QZSS satellite signals.. 
 
 1. The u-blox receiver is controlled by an [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796) data logger. Components include a Cortex-M0+ microcontroller and a micro-SD card port. A helpful overview is available [here:](https://learn.adafruit.com/adafruit-feather-m0-adalogger/). The Arduino code is in the software directory.
+
+
 1. The steps to ...
 
 
