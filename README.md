@@ -28,7 +28,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
  <figure>
 <p align="center">
-<img src="/Documentation/Images/cost_overview.png" style="width:20%">
+<img src="/Documentation/Images/cost_overview.png" style="width:80%">
 </p>
 <!---<figcaption>
  <strong>Figure 2.</strong> U-blox ZED-F9P receiver board.
@@ -53,7 +53,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
 <figure>
 <p align="center">
-<img src="/Documentation/Images/static_GNSS_experiment.png" style="width:20%">
+<img src="/Documentation/Images/static_GNSS_experiment.png" style="width:80%">
 </p>
 <figcaption>
 <b>Figure 2.</b> A stationary comparison between low-cost (u-blox ZED-F9P) and survey-grade (Trimble R10) systems conducted in Terra Nova Bay, Antarctica.
