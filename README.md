@@ -44,7 +44,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
 - Key components include a [u-blox ZED-F9P GNSS receiver module](https://www.u-blox.com/en/product/zed-f9p-module) and [u-blox patch antenna](https://www.u-blox.com/en/product/ann-mb-series).     
 
-- The [u-blox ZED-F9P GNSS receiver module](https://www.u-blox.com/en/product/zed-f9p-module) is capable of tracking GPS (L1/L2), GLONASS (L1/L2), Galileo (E1/E5b), Beidou (B1/B2), and QZSS (L1/L2) systems and frequencies. 
+- The [u-blox ZED-F9P GNSS receiver module](https://www.u-blox.com/en/product/zed-f9p-module) is capable of receiving multi-GNSS signals: GPS (L1/L2), GLONASS (L1/L2), Galileo (E1/E5b), Beidou (B1/B2), and QZSS (L1/L2) systems and frequencies. 
 
 - The receiver is configured to log multi-GNSS, dual frequency observations at 1 Hz.  RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) are enabled and the raw binary u-blox files are stored with an Arduino data logger to micro SD card.
 
@@ -116,9 +116,9 @@ code section here
 
 1. The u-blox receiver is controlled by an [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796) data logger. Components include a Cortex-M0+ microcontroller and a micro-SD card port. A helpful overview is available [here:](https://learn.adafruit.com/adafruit-feather-m0-adalogger/)
 
-1.The Arduino code is in the software directory...
+2. The Arduino code is in the software directory...
 
-1. The steps to ...
+3. The steps to ...
 
 ### File formats
 
@@ -153,7 +153,7 @@ We installed four u-blox and two Trimble GNSS stations along the left shear marg
 <figure>
 <p align="center">
 </br>
-<img src="/Documentation/Images/place_map.png" style="width:80%">
+<img src="/Documentation/Images/place_map.png" style="width:60%">
 </p>
 <figcaption>
 <b>Figure 6.</b> GNSS stations installed on Priestley Glacier. 
