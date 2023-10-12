@@ -4,6 +4,8 @@ This repository describes the build and configuration of the low-cost GNSS posit
 
 [Still, H., Odolinski, R., Bowman, H., Hulbe, C. and Prior, D. (Under review) Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica. Submitted to the _Journal of Glaciology_](https://drive.google.com/file/d/1XmEQSZw7YCs4UeDsx9XjOYceR0UcZ_Ou/view?usp=drive_link)
 
+The low-cost, low-power GNSS units use u-blox ZED-F9P receivers and are designed to monitor the velocity of Antarctic glaciers and ice shelves. 
+
 
 <!---![Priestley Glacier, Victoria Land, Antarctica](/Documentation/Images/DSC_0474_crop.jpeg)--->
 
@@ -22,7 +24,6 @@ This repository describes the build and configuration of the low-cost GNSS posit
 ## Motivation
 
 Global navigation satellite system (GNSS) positioning is ubiquitous in the cryospheric sciences, with uses ranging from routine field site navigation tasks to precise monitoring and measurement of deformation. Glaciological applications typically use geodetic or ‘survey-grade’ GNSS receivers that retail for >$20,000 NZD per unit. High equipment costs can be prohibitive to scientific discovery, limiting the concurrent deployment of multiple GNSS receivers over large areas of interest and restricting access to users with well-financed research programs.
-
 
  Low-cost, mass-market, open-source GNSS chip devices - a relatively new and rapidly developing technology - are an alternative to the proprietary systems typically used in glacier and other cryosphere studies. Coupled with a low-cost patch antenna, these systems are light and compact, with relatively low power consumption and a cost of entry around $500 NZD.  Here we demonstrate the set-up of a low-cost, u-blox GNSS unit for use in high-latitude glaciated environments. Our work shows that alternatives to expensive survey-grade systems are readily available and we encourage everybody to adopt them.   
 
@@ -74,6 +75,9 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 </figure>
 
 
+**[Diagram showing connections here]**
+
+
 ### Table 1. Components to build a low-cost GNSS unit.
 
 | Component                                                                                      | Description              | Serial number     | Cost (EUR)  |
@@ -84,7 +88,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 | [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796)                         | Data logger              |  x                | 19.95 USD   |
 | [FeatherWing Proto Board](https://www.adafruit.com/product/2884)                               | x                        |  x                | 4.95 USD    |
 
-We also evaluate the performance of two low-cost multiband antenna models:  the u-blox ANN-MB patch antenna \citep{ublox2022a} and an Eltehs multiband (ELT0123) standard surveying antenna \citep{Eltehs2023} (Table \ref{tbl:hardware}). 
+
 
 A detailed list of components is provided [here](/Hardware). 
 
@@ -95,7 +99,12 @@ A detailed list of components is provided [here](/Hardware).
 
 1. Configure the u-blox receiver with a CONFIG.txt file. We use the freely-available software [u-center](https://www.u-blox.com/en/product/u-center) to generate the CONFIG.txt file and write the configuration to the receiver. A CONFIG.txt file looks like this:
 
-1. In this case, we enable the u-blox receiver to log GPS L1/L2, GLONASS, Galileo, Beidou, QZSS satellite signals.. 
+```
+code section here
+```
+
+1. In this case, we enable the u-blox receiver to log RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) from the satellite constellations visible in the Ross Sea region of Antarctica:
+- GPS L1/L2, GLONASS, Galileo, Beidou, QZSS
 
 ### Data logging
 
@@ -106,17 +115,52 @@ A detailed list of components is provided [here](/Hardware).
 
 ### File formats
 
-1. The first processing step involves a conversion from the proprietary u-blox and Trimble raw data file formats to standard RINEX 3.03 (Receiver Independent Exchange) files. U-blox data streams are converted using open-source RTKLIB tools \citep{Takasu2009}. 
+1. Raw GNSS data is logged in the proprietary u-blox .ubx file format. 
+
+1. U-blox data streams can be converted to standard RINEX 3.03 (Receiver Independent Exchange) using [open-source RTKLIB tools](https://www.rtklib.com/). 
+
+1. We prefer to use [RTKLIB tools](https://www.rtklib.com/) to post-process our GNSS datasets for flexibility in parameter settings. For simple and fast results, use the [CSRS-PPP service](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php).
 
 <a name="power"></a>
 ## Power consumption
 
 The low-cost GNSS units are powered by two 10 W, 12 V solar panels and a 12 V, 18 A h SLA battery. The rate of power consumption is relatively low (0.57 W for the u-blox ZED-F9P module + patch antenna + Arduino Cortex M0 logger, versus 1.25 W for a Trimble R10 system, and 3.67~W for a Trimble NetR9 system).
 
+
+<a name="example"></a>
+## Example data:
+
+We installed four u-blox and two Trimble GNSS stations along the left shear margin of Priestley Glacier, Antarctica, in November 2022. Our objective was to monitor tidally-modulated 3D ice motion with centimetre-level precision.
+
+Map and velocity data here:
+
+<figure>
+<p align="center">
+<img src="/Documentation/Images/dynamic_GNSS_experiment.png" style="width:80%">
+</p>
+<figcaption>
+<b>Figure 5.</b>Along- and across-flow ice displacement (coloured line) and velocity (black line) measured u-blox and Trimble stations installed on Priestley Glcaier. 
+</figcaption>
+</figure>
+
+<figure>
+<p align="center">
+<img src="/Documentation/Images/place_map.png" style="width:80%">
+</p>
+<figcaption>
+<b>Figure 6.</b> GNSS stations installed on Priestley Glacier. 
+</figcaption>
+</figure>
+
+
 <a name="resources"></a>
 ## Resources
 
-Extra links go here:
+- [RTKLIB](https://www.rtklib.com/) is an open-source software library for GNSS data processing. 
+
+- [u-center GNSS evaluation software](https://www.u-blox.com/en/product/u-center) is used to configure u-blox receivers.
+
+
 
 <a name="license"></a>
 ## License
@@ -138,7 +182,7 @@ The _Journal of Glaciology_ paper can be acknowledged with the following citatio
 
 ```
 @article{still2023gnss,
-  title={Observing glacier dynamics with low-cot, multi-GNSS in Victoria Land, Antarctica},
+  title={Observing glacier dynamics with low-cost, multi-GNSS in Victoria Land, Antarctica},
   author={Still, Holly and Odolinski, Robert and Bowman, M Hamish and Hulbe, Christina and Prior, David J  },
   journal={under review for Journal of Glaciology},
   year={2023},

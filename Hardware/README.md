@@ -3,7 +3,7 @@
 
 ### Table 1. Components to build a low-cost GNSS unit.
 
-| Component                                                                                           | Description              | Part number       | Cost (EUR)  |
+| Component                                                                                           | Description              | Part number       | Cost (NZD)  |
 |-----------------------------------------------------------------------------------------------------|--------------------------|-------------------|-------------|
 | [U-blox ZED-F9P receiver board](/Documentation/Manuals/ZED-F9P-04B_DataSheet_UBX-21044850.pdf)      | GNSS receiver            |  x                | 209.99      |
 | [U-blox ANN-MB multi-band (L1, L2/E5b) 28dB patch antenna](https://www.u-blox.com/en/product/ann-mb-series) | Antenna option 1 |  x                | 60 USD      |
@@ -17,9 +17,9 @@
 | [Molex connector 4 pin](https://www.jaycar.co.nz/4-pin-0-1in-header-with-crimp-pins-2-54mm-pitch/p/HM3404?)| For circuit board        |  HP0724    | $1.30 NZD   |
 | [12 pin JST wire assembly](https://gnss.store/cable-connectors/18-ELT0004.html)                     | Connector                |  ELT0004          | 5.30 EUR    |
 | [Temperature stable resistors x2]()                                                                 | x                        |  x                | x           |
-| [12v SLA battery 18Ahr](https://www.jaycar.co.nz/12v-18ah-sla-battery/p/SB2490)                     | Power                    |  SB2490           | $129 NZD    |
-| [100 watt solar panel x2 with controller](https://www.aliexpress.com/item/1005004121593648.html)    | Power                    |  SB2490           | $27 NZD     |
-| [PWM solar charge controller](https://www.aliexpress.com/item/1005003634186508.html)                | Power                    |  x                | x           |
+| [12v SLA battery 18Ahr](https://www.jaycar.co.nz/12v-18ah-sla-battery/p/SB2490)                     | Battery                  |  SB2490           | $129 NZD    |
+| [100 watt solar panel x2 with controller](https://www.aliexpress.com/item/1005004121593648.html)    | Solar panel              |  SB2490           | $27 NZD     |
+| [PWM solar charge controller](https://www.aliexpress.com/item/1005003634186508.html)                | Solar controller         |  x                | x           |
 | [USB power cable 0.25 m]                                                                            | Power cable              |  x                | x           |
 | [Silicone solar power cable 1 m]                                                                    | Power cable              |  x                | x           |
 | [DC barrel connector Y-cable]                                                                       | Power cable              |  x                | x           |
@@ -29,4 +29,6 @@
 | [PG7 cable gland](https://www.jaycar.co.nz/3-6-5mm-dia-waterproof-cable-glands-pack-of-2/p/HP0720)  | Snow-proof casing        |  HP0720           | $8.20 NZD   |
 | [PG9 cable gland](https://www.jaycar.co.nz/4-8mm-dia-waterproof-cable-glands-pack-of-2/p/HP0724)    | Snow-proof casing        |  HP0724           | $9.50 NZD   |
 | [Ring terminals]()                                                                                  | x                        |  x                | x           |
-| [Cable end ferrules]()                                                                              | x                        |  x                | x           |
+| [Cable end ferrules]()                                                                              | Terminal for battery     |  x                | x           |
+|                                                                                                     |                          |    Total cost:    | $ xx NZD    |
+|                                                                                                     |                          |    Total cost:    | = xx EUR    |
