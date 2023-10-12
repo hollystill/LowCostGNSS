@@ -2,7 +2,7 @@
 
 This repository describes the build and configuration of the low-cost GNSS positioning units used in the publication:
 
-[Still, H., Odolinski, R., Bowman, H., Hulbe, C. and Prior, D. (Under review) Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica. Submitted to the _Journal of Glaciology_](https://drive.google.com/file/d/1XmEQSZw7YCs4UeDsx9XjOYceR0UcZ_Ou/view?usp=drive_link)
+[Still, H., Odolinski, R., Bowman, H., Hulbe, C. and Prior, D. (Under review) Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica. Submitted to the _Journal of Glaciology_](/Paper/LowCostGNSSpaper.pdf)
 
 The low-cost, low-power GNSS units use u-blox ZED-F9P receivers and are designed to monitor the velocity of Antarctic glaciers and ice shelves. 
 
@@ -18,7 +18,7 @@ The low-cost, low-power GNSS units use u-blox ZED-F9P receivers and are designed
 </figure>
 
 ## Contents
-[Motivation](#motivation) | [Overview](#overview) | [Hardware](#hardware) | [How does it work?](#setup) | [Power consumption](#power) |  [Resources](#resources) |  [License](#license) | [Contributors](#contributors)  
+[Motivation](#motivation) | [Overview](#overview) | [Hardware](#hardware) | [How does it work?](#setup) | [Power consumption](#power) | [Example data](#example) | [Resources](#resources) | [License](#license) | [Contributors](#contributor) | [Citation](#citation)  
 
 <a name="motivation"></a>
 ## Motivation
@@ -57,7 +57,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 <img src="/Documentation/Images/static_GNSS_experiment.png" style="width:80%">
 </p>
 <figcaption>
-<b>Figure 2.</b> A stationary comparison between low-cost (u-blox ZED-F9P) and survey-grade (Trimble R10) systems conducted in Terra Nova Bay, Antarctica.
+<b>Figure 3.</b> A stationary comparison between low-cost (u-blox ZED-F9P) and survey-grade (Trimble R10) systems conducted in Terra Nova Bay, Antarctica.
 </figcaption>
 </figure>
 
@@ -70,14 +70,20 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 <img src="/Documentation/Images/ublox_receiver.jpg" style="width:50%">
 </p>
 <figcaption>
- <strong>Figure 3.</strong> U-blox ZED-F9P receiver board.
+ <strong>Figure 4.</strong> U-blox ZED-F9P receiver board.
 </figcaption>
 </figure>
 
 
 **[Diagram showing connections here]**
 
+### Key components
 
+- [U-blox ZED-F9P receiver board](/Documentation/Manuals/ZED-F9P-04B_DataSheet_UBX-21044850.pdf)
+- [U-blox ANN-MB patch antenna](https://www.u-blox.com/en/product/ann-mb-series)
+- [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796) 
+
+<!---!
 ### Table 1. Components to build a low-cost GNSS unit.
 
 | Component                                                                                      | Description              | Serial number     | Cost (EUR)  |
@@ -87,7 +93,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 | [Eltehs surveying antenna](https://gnss.store/gnss-rtk-multiband-antennas/140-elt0123.html)    | Alternative GNSS antenna |  x                | 180.99      |
 | [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796)                         | Data logger              |  x                | 19.95 USD   |
 | [FeatherWing Proto Board](https://www.adafruit.com/product/2884)                               | x                        |  x                | 4.95 USD    |
-
+--->
 
 
 A detailed list of components is provided [here](/Hardware). 
@@ -103,13 +109,14 @@ A detailed list of components is provided [here](/Hardware).
 code section here
 ```
 
-1. In this case, we enable the u-blox receiver to log RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) from the satellite constellations visible in the Ross Sea region of Antarctica:
-- GPS L1/L2, GLONASS, Galileo, Beidou, QZSS
+2. In this case, we enable the u-blox receiver to log RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) from the satellite constellations visible in the Ross Sea region of Antarctica:
+   - GPS L1/L2, GLONASS (L1/L2), Galileo (E1/E5b), Beidou (B1/B2), and QZSS (L1/L2)
 
 ### Data logging
 
-1. The u-blox receiver is controlled by an [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796) data logger. Components include a Cortex-M0+ microcontroller and a micro-SD card port. A helpful overview is available [here:](https://learn.adafruit.com/adafruit-feather-m0-adalogger/). The Arduino code is in the software directory.
+1. The u-blox receiver is controlled by an [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796) data logger. Components include a Cortex-M0+ microcontroller and a micro-SD card port. A helpful overview is available [here:](https://learn.adafruit.com/adafruit-feather-m0-adalogger/)
 
+1.The Arduino code is in the software directory...
 
 1. The steps to ...
 
@@ -124,7 +131,7 @@ code section here
 <a name="power"></a>
 ## Power consumption
 
-The low-cost GNSS units are powered by two 10 W, 12 V solar panels and a 12 V, 18 A h SLA battery. The rate of power consumption is relatively low (0.57 W for the u-blox ZED-F9P module + patch antenna + Arduino Cortex M0 logger, versus 1.25 W for a Trimble R10 system, and 3.67~W for a Trimble NetR9 system).
+The low-cost GNSS units are powered by two 10 W, 12 V solar panels and a 12 V, 18 A h SLA battery. The rate of power consumption is <50% lower than for survey-grade alternatives (0.57 W for the u-blox ZED-F9P module + patch antenna + Arduino Cortex M0 logger, versus 1.25 W for a Trimble R10 system, and 3.67~W for a Trimble NetR9 system).
 
 
 <a name="example"></a>
@@ -132,33 +139,34 @@ The low-cost GNSS units are powered by two 10 W, 12 V solar panels and a 12 V, 1
 
 We installed four u-blox and two Trimble GNSS stations along the left shear margin of Priestley Glacier, Antarctica, in November 2022. Our objective was to monitor tidally-modulated 3D ice motion with centimetre-level precision.
 
-Map and velocity data here:
 
 <figure>
 <p align="center">
 <img src="/Documentation/Images/dynamic_GNSS_experiment.png" style="width:80%">
 </p>
 <figcaption>
-<b>Figure 5.</b>Along- and across-flow ice displacement (coloured line) and velocity (black line) measured u-blox and Trimble stations installed on Priestley Glcaier. 
+<b>Figure 5.</b> Along- and across-flow ice displacement (coloured line) and velocity (black line) measured by u-blox (Ub1) and Trimble (Tr1) stations installed on Priestley Glacier. The tide prediction is from the <a href="https://github.com/EarthAndSpaceResearch/TMD_Matlab_Toolbox_v2.5">CATS2008 tide model.</a> 
 </figcaption>
 </figure>
 
+
 <figure>
 <p align="center">
+</br>
 <img src="/Documentation/Images/place_map.png" style="width:80%">
 </p>
 <figcaption>
 <b>Figure 6.</b> GNSS stations installed on Priestley Glacier. 
 </figcaption>
 </figure>
-
+</br>
 
 <a name="resources"></a>
 ## Resources
 
-- [RTKLIB](https://www.rtklib.com/) is an open-source software library for GNSS data processing. 
-
 - [u-center GNSS evaluation software](https://www.u-blox.com/en/product/u-center) is used to configure u-blox receivers.
+
+- [RTKLIB](https://www.rtklib.com/) is an open-source software library for GNSS data processing. 
 
 
 
@@ -167,6 +175,7 @@ Map and velocity data here:
 
 This project is distributed under a ....
 
+
 <a name="contributor"></a>
 ## Contributor information
 
@@ -174,6 +183,8 @@ This project is distributed under a ....
 
 - :artificial_satellite: Hamish Bowman...
 
+
+<a name="citation"></a>
 ## Citation
 
 The _Journal of Glaciology_ paper can be acknowledged with the following citation:
@@ -192,6 +203,6 @@ The _Journal of Glaciology_ paper can be acknowledged with the following citatio
 <figure>
 <img src="/Documentation/Images/DSC_0319.jpg">
 <figcaption>
-<b>Figure 4.</b> Priestley Glacier, November 2022.
+<b>Figure 7.</b> A frozen meltwater pond on Priestley Glacier, November 2022.
 </figcaption>
 </figure>
