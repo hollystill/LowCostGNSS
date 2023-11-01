@@ -70,7 +70,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 <img src="/Documentation/Images/ublox_receiver.jpg" style="width:50%">
 </p>
 <figcaption>
- <strong>Figure 4.</strong> U-blox ZED-F9P receiver board.
+ <strong>Figure 4.</strong> <a href="https://gnss.store/zed-f9p-gnss-modules/99-13-elt0087.html#/27-add_antenna-without_antenna">U-blox ZED-F9P receiver board.</a> 
 </figcaption>
 </figure>
 
@@ -79,8 +79,8 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
 ### Key components
 
-- [U-blox ZED-F9P receiver board](/Documentation/Manuals/ZED-F9P-04B_DataSheet_UBX-21044850.pdf)
-- [U-blox ANN-MB patch antenna](https://www.u-blox.com/en/product/ann-mb-series)
+- [U-blox ZED-F9P receiver board](https://www.u-blox.com/en/product/zed-f9p-module)
+- [U-blox ANN-MB multiband patch antenna](https://www.u-blox.com/en/product/ann-mb-series)
 - [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796) 
 
 <!---!
@@ -103,13 +103,9 @@ A detailed list of components is provided [here](/Hardware).
 
 ### Configure the GNSS receiver
 
-1. Configure the u-blox receiver with a CONFIG.txt file. We use the freely-available software [u-center](https://www.u-blox.com/en/product/u-center) to generate the CONFIG.txt file and write the configuration to the receiver. A CONFIG.txt file looks like this:
+1. Configure the u-blox receiver with a [CONFIG.txt](/Software/config.txt) file. We use the freely-available software [u-center](https://www.u-blox.com/en/product/u-center) to generate the CONFIG.txt file and write the configuration to the receiver.
 
-```
-code section here
-```
-
-2. In this case, we enable the u-blox receiver to log RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) from the satellite constellations visible in the Ross Sea region of Antarctica:
+2. In this case, we enable the u-blox receiver to log RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) for the satellite constellations visible in the Ross Sea region of Antarctica:
    - GPS L1/L2, GLONASS (L1/L2), Galileo (E1/E5b), Beidou (B1/B2), and QZSS (L1/L2)
 
 ### Data logging
@@ -126,7 +122,7 @@ code section here
 
 1. U-blox data streams can be converted to standard RINEX 3.03 (Receiver Independent Exchange) using [open-source RTKLIB tools](https://www.rtklib.com/). 
 
-1. We prefer to use [RTKLIB tools](https://www.rtklib.com/) to post-process our GNSS datasets for flexibility in parameter settings. For simple and fast results, use the [CSRS-PPP service](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php).
+1. We prefer to use [RTKLIB tools](https://www.rtklib.com/) to post-process our GNSS datasets for flexibility in parameter settings and positioning method (e.g., single-baseline kinematic positioning or PPP). For simple and fast results, use the [CSRS-PPP service](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php).
 
 <a name="power"></a>
 ## Power consumption
@@ -173,7 +169,7 @@ We installed four u-blox and two Trimble GNSS stations along the left shear marg
 <a name="license"></a>
 ## License
 
-This project is distributed under a ....
+This project is released under the [MIT License](opensource.org/license/mit/).
 
 
 <a name="contributor"></a>
