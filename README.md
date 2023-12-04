@@ -183,9 +183,9 @@ This project is released under the [MIT License](opensource.org/license/mit/).
 <a name="contributor"></a>
 ## Contributor information
 
-:artificial_satellite: Holly Still is a PhD candidate at the School of Surveying, University of Otago, New Zealand. Email: holly.still@postgrad.otago.ac.nz
+- Holly Still is a PhD candidate at the School of Surveying, University of Otago, New Zealand. Email: holly.still@postgrad.otago.ac.nz
 
-:artificial_satellite: Hamish Bowman is a Computing and Numerical Simulation Technician at the University of Otago, New Zealand.
+- Hamish Bowman is a Computing and Numerical Simulation Technician at the University of Otago, New Zealand.
 
 
 <a name="citation"></a>
