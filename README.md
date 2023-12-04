@@ -18,7 +18,7 @@ The low-cost, low-power GNSS units use u-blox ZED-F9P receivers and are designed
 </figure>
 
 ## Contents
-[Motivation](#motivation) | [Overview](#overview) | [Hardware](#hardware) | [How does it work?](#setup) | [Power consumption](#power) | [Example data](#example) | [Resources](#resources) | [License](#license) | [Contributors](#contributor) | [Citation](#citation)  
+[Motivation](#motivation) | [Low-cost GNSS](#overview) | [Hardware](#hardware) | [How does it work?](#setup) | [Power consumption](#power) | [Example data](#example) | [Resources](#resources) | [License](#license) | [Contributors](#contributor) | [Citation](#citation)  
 
 <a name="motivation"></a>
 ## Motivation
@@ -70,7 +70,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 <img src="/Documentation/Images/ublox_fix.jpg" style="width:50%">
 </p>
 <figcaption>
- <strong>Figure 4.</strong> <a href="https://gnss.store/zed-f9p-gnss-modules/99-13-elt0087.html#/27-add_antenna-without_antenna">U-blox ZED-F9P receiver  and <a href="https://www.adafruit.com/product/2796">Adafruit Feather M0 Adalogger.</a> 
+<b>Figure 4.</b> U-blox ZED-F9P receiver and Adafruit Feather M0 Adalogger.
 </figcaption>
 </figure>
 
@@ -78,7 +78,7 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
 ### Key components
 
-- [U-blox ZED-F9P receiver board](https://www.u-blox.com/en/product/zed-f9p-module)
+- [U-blox ZED-F9P receiver](https://www.u-blox.com/en/product/zed-f9p-module)
 - [U-blox ANN-MB multiband patch antenna](https://www.u-blox.com/en/product/ann-mb-series)
 - [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796) 
 
@@ -111,7 +111,7 @@ A detailed list of components is provided [here](/Hardware).
 
 ### Data logging
 
-1. The data-logger includes an [Arduino microcontroller Adafruit Feather Cortex M0 Adalogger (SAMD21 chip)](https://www.adafruit.com/product/2796), logging to a 32 GB micro-SD card.  A helpful overview is available [here:](https://learn.adafruit.com/adafruit-feather-m0-adalogger/)
+1. The data-logger includes an Arduino microcontroller [Adafruit Feather Cortex M0 Adalogger (SAMD21 chip)](https://www.adafruit.com/product/2796), logging to a 32 GB micro-SD card.  A helpful overview is available [here.(https://learn.adafruit.com/adafruit-feather-m0-adalogger/)
 <!---!
 Components include a Cortex-M0+ microcontroller and a micro-SD card port.
 --->
@@ -126,9 +126,9 @@ Components include a Cortex-M0+ microcontroller and a micro-SD card port.
 
 1. Raw GNSS data is logged in the proprietary u-blox .ubx file format. 
 
-1. U-blox data streams can be converted to standard RINEX 3.03 (Receiver Independent Exchange) format using [open-source RTKLIB tools](https://www.rtklib.com/). 
+2. U-blox data streams can be converted to standard RINEX 3.03 (Receiver Independent Exchange) format using [open-source RTKLIB tools](https://www.rtklib.com/). 
 
-1. We prefer to use [RTKLIB tools](https://www.rtklib.com/) to post-process our GNSS datasets for flexibility in parameter settings and positioning method (e.g., single-baseline kinematic positioning or PPP). For simple and fast results, use the [CSRS-PPP service](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php).
+3. We prefer to use [RTKLIB tools](https://www.rtklib.com/) to post-process our GNSS datasets for flexibility in parameter settings and positioning method (e.g., single-baseline kinematic positioning or PPP). For simple and fast results, use the [CSRS-PPP service](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php).
 
 <a name="power"></a>
 ## Power consumption
