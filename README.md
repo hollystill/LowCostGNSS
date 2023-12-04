@@ -2,7 +2,7 @@
 
 This repository describes the build and configuration of the low-cost GNSS positioning units used in the publication:
 
-[Still, H., Odolinski, R., Bowman, H., Hulbe, C. and Prior, D. (Under review) Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica. Submitted to the _Journal of Glaciology_](/Paper/LowCostGNSSpaper.pdf)
+[Still, H., Odolinski, R., Bowman, M., Hulbe, C., & Prior, D. (2023). Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica. _Journal of Glaciology_, 1-40. doi:10.1017/jog.2023.101](https://doi.org/10.1017/jog.2023.101)
 
 The low-cost, low-power GNSS units use u-blox ZED-F9P receivers and are designed to monitor the velocity of Antarctic glaciers and ice shelves. 
 
@@ -67,15 +67,14 @@ Global navigation satellite system (GNSS) positioning is ubiquitous in the cryos
 
 <figure>
 <p align="center">
-<img src="/Documentation/Images/ublox_receiver.jpg" style="width:50%">
+<img src="/Documentation/Images/ublox_fix.jpg" style="width:50%">
 </p>
 <figcaption>
- <strong>Figure 4.</strong> <a href="https://gnss.store/zed-f9p-gnss-modules/99-13-elt0087.html#/27-add_antenna-without_antenna">U-blox ZED-F9P receiver board.</a> 
+ <strong>Figure 4.</strong> <a href="https://gnss.store/zed-f9p-gnss-modules/99-13-elt0087.html#/27-add_antenna-without_antenna">U-blox ZED-F9P receiver  and <a href="https://www.adafruit.com/product/2796">Adafruit Feather M0 Adalogger.</a> 
 </figcaption>
 </figure>
 
 
-**[Diagram showing connections here]**
 
 ### Key components
 
@@ -103,24 +102,31 @@ A detailed list of components is provided [here](/Hardware).
 
 ### Configure the GNSS receiver
 
-1. Configure the u-blox receiver with a [CONFIG.txt](/Software/config.txt) file. We use the freely-available software [u-center](https://www.u-blox.com/en/product/u-center) to generate the CONFIG.txt file and write the configuration to the receiver.
+1. Configure the u-blox receiver with a [CONFIG.txt](/Software/Ublox-ZED-F9P-configuration/priestley_glacier.txt) file. We use the freely-available software [u-center](https://www.u-blox.com/en/product/u-center) to generate the CONFIG.txt file and write the configuration to the receiver.
 
 2. In this case, we enable the u-blox receiver to log RXM-RAWX messages (raw carrier phase, pseudorange, Doppler and signal quality information) and RXM-SFRBX messages (broadcast navigation data) for the satellite constellations visible in the Ross Sea region of Antarctica:
    - GPS L1/L2, GLONASS (L1/L2), Galileo (E1/E5b), Beidou (B1/B2), and QZSS (L1/L2)
 
+3. The u-blox ZED-F9P receivers tested in this project use the firmware version 1.32 (May, 2022) which can be downloaded from [here](https://www.u-blox.com/en/product-resources?query=ZED-F9P%2520HPG%25201.32%2520firmware&file_category=Firmware%2520Update&legacy=Current) and installed with [u-center](https://www.u-blox.com/en/product/u-center). Our configuration file is specific to this firmware version.     
+
 ### Data logging
 
-1. The u-blox receiver is controlled by an [Adafruit Feather M0 Adalogger](https://www.adafruit.com/product/2796) data logger. Components include a Cortex-M0+ microcontroller and a micro-SD card port. A helpful overview is available [here:](https://learn.adafruit.com/adafruit-feather-m0-adalogger/)
+1. The data-logger includes an [Arduino microcontroller Adafruit Feather Cortex M0 Adalogger (SAMD21 chip)](https://www.adafruit.com/product/2796), logging to a 32 GB micro-SD card.  A helpful overview is available [here:](https://learn.adafruit.com/adafruit-feather-m0-adalogger/)
+<!---!
+Components include a Cortex-M0+ microcontroller and a micro-SD card port.
+--->
 
-2. The Arduino code is in the software directory...
+2. The data-logging system uses the [SparkFun u-blox GNSS Arduino Library](https://github.com/sparkfun/SparkFun_u-blox_GNSS_Arduino_Library) and is inspired by [data logging example 3](https://github.com/sparkfun/SparkFun_u-blox_GNSS_Arduino_Library/tree/main/examples/Example3_GetPosition) by Paul Clark.
 
-3. The steps to ...
+3. The Arduino data-logging code is included the software directory. Further details can be found at https://github.com/HamishB/uBlox_PPP_logger
+
+
 
 ### File formats
 
 1. Raw GNSS data is logged in the proprietary u-blox .ubx file format. 
 
-1. U-blox data streams can be converted to standard RINEX 3.03 (Receiver Independent Exchange) using [open-source RTKLIB tools](https://www.rtklib.com/). 
+1. U-blox data streams can be converted to standard RINEX 3.03 (Receiver Independent Exchange) format using [open-source RTKLIB tools](https://www.rtklib.com/). 
 
 1. We prefer to use [RTKLIB tools](https://www.rtklib.com/) to post-process our GNSS datasets for flexibility in parameter settings and positioning method (e.g., single-baseline kinematic positioning or PPP). For simple and fast results, use the [CSRS-PPP service](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php).
 
@@ -162,6 +168,8 @@ We installed four u-blox and two Trimble GNSS stations along the left shear marg
 
 - [u-center GNSS evaluation software](https://www.u-blox.com/en/product/u-center) is used to configure u-blox receivers.
 
+- [u-blox ZED-F9P GNSS receivers](https://www.u-blox.com/en/product/zed-f9p-module)
+
 - [RTKLIB](https://www.rtklib.com/) is an open-source software library for GNSS data processing. 
 
 
@@ -177,7 +185,7 @@ This project is released under the [MIT License](opensource.org/license/mit/).
 
 - :artificial_satellite: Holly Still is a PhD candidate at the School of Surveying, University of Otago, New Zealand. Email: holly.still@postgrad.otago.ac.nz
 
-- :artificial_satellite: Hamish Bowman...
+- :artificial_satellite: Hamish Bowman is a Computing and Numerical Simulation Technician at the University of Otago, New Zealand.
 
 
 <a name="citation"></a>
@@ -185,15 +193,17 @@ This project is released under the [MIT License](opensource.org/license/mit/).
 
 The _Journal of Glaciology_ paper can be acknowledged with the following citation:
 
-- [Still, H., Odolinski, R., Bowman, H., Hulbe, C. and Prior, D. (Under review) Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica. Submitted to the _Journal of Glaciology_](https://drive.google.com/file/d/1XmEQSZw7YCs4UeDsx9XjOYceR0UcZ_Ou/view?usp=drive_link)
+- Still, H., Odolinski, R., Bowman, M., Hulbe, C., & Prior, D. (2023). Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica. Journal of Glaciology, 1-40. doi:10.1017/jog.2023.101
 
 ```
-@article{still2023gnss,
-  title={Observing glacier dynamics with low-cost, multi-GNSS in Victoria Land, Antarctica},
-  author={Still, Holly and Odolinski, Robert and Bowman, M Hamish and Hulbe, Christina and Prior, David J  },
-  journal={under review for Journal of Glaciology},
-  year={2023},
-}
+@article{still_odolinski_bowman_hulbe_prior_2023, 
+  title={Observing glacier dynamics with low-cost, multi-GNSS positioning in Victoria Land, Antarctica}, 
+  DOI={10.1017/jog.2023.101}, 
+  journal={Journal of Glaciology}, 
+  publisher={Cambridge University Press}, 
+  author={Still, Holly and Odolinski, Robert and Bowman, M. Hamish and Hulbe, Christina and Prior, David J.}, 
+  year={2023}, 
+  pages={1–40}}
 ```
 
 <figure>
